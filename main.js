@@ -26,3 +26,14 @@ test.set("lion", "golden");
 // console.log(test.remove("apple")); // true
 // console.log(test.remove("gino")); // false
 // console.log(test.length()); // 12
+// test.clear();
+// console.log(test);
+// console.log(test.keys());
+// console.log(test.values());
+// console.log(test.entries());
+// test.set("lion", "piss"); // Updates values correctly
+console.log(test.entries());
+console.log(test);
+test.set("moon", "silver");
+console.log(test.entries());
+console.log(test);

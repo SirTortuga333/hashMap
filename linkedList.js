@@ -109,7 +109,7 @@ export class LinkedList {
     let string = "";
     let tmp = this.head();
     while (tmp !== null) {
-      string += `( ${tmp.value} ) -> `;
+      string += `( ${tmp.value.key} - ${tmp.value.value} ) -> `;
       tmp = tmp.nextNode;
     }
     if (tmp === null) string += "null";
