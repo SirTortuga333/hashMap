@@ -93,11 +93,11 @@ export class LinkedList {
 
     let tmp = this.head();
     let count = 0;
-    while (tmp !== null && tmp.value !== value) {
+    while (tmp !== null && tmp.value.key !== value) {
       count++;
       tmp = tmp.nextNode;
     }
-    if (tmp !== null && tmp.value === value) return count;
+    if (tmp !== null && tmp.value.key === value) return count;
     else return "Not Found - Not in Linked List";
   }
   toString() {

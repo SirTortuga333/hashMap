@@ -54,4 +54,37 @@ export class HashMap {
     }
     return null;
   }
+
+  has(key) {
+    let bucket = this.hash(key);
+    let list = this.buckets[bucket];
+
+    if (list !== null) {
+      let node = list.head();
+      while (node !== null && node.value.key !== key) node = node.nextNode;
+      if (node !== null && node.value.key === key) return true;
+      else return false;
+    }
+    return false;
+  }
+
+  remove(key) {
+    if (this.has(key)) {
+      let bucket = this.hash(key);
+      let list = this.buckets[bucket];
+      list.removeAt(list.find(key));
+      return true;
+    }
+    return false;
+  }
+
+  length(){
+    let count = 0;
+    this.buckets.forEach(element => {
+        if(element !== null) count += element.size();
+    });
+    return count;
+  }
+
+  
 }
